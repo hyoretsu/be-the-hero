@@ -1,12 +1,12 @@
-import React from "react";
-import { Feather } from "@expo/vector-icons";
-import { useNavigation, useRoute } from "@react-navigation/native";
-import { View, Text, Image, TouchableOpacity, Linking } from "react-native";
-import * as MailComposer from "expo-mail-composer";
+import React from 'react';
+import { Feather } from '@expo/vector-icons';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import { View, Text, Image, TouchableOpacity, Linking } from 'react-native';
+import * as MailComposer from 'expo-mail-composer';
 
-import logoImg from "../../assets/logo.png";
+import logoImg from '../../assets/logo.png';
 
-import styles from "./styles";
+import styles from './styles';
 
 export default function Detail() {
  const navigation = useNavigation();
@@ -17,9 +17,9 @@ export default function Detail() {
   incident.name
  }, estou entrando em contato pois gostaria de ajudar no caso "${
   incident.title
- }" com o valor de ${Intl.NumberFormat("pt-Br", {
-  style: "currency",
-  currency: "BRL"
+ }" com o valor de ${Intl.NumberFormat('pt-Br', {
+  style: 'currency',
+  currency: 'BRL'
  }).format(incident.value)}`;
 
  function navigateBack() {
@@ -59,9 +59,9 @@ export default function Detail() {
 
     <Text style={styles.incidentProperty}>VALOR:</Text>
     <Text style={styles.incidentValue}>
-     {Intl.NumberFormat("pt-Br", {
-      style: "currency",
-      currency: "BRL"
+     {Intl.NumberFormat('pt-Br', {
+      style: 'currency',
+      currency: 'BRL'
      }).format(incident.value)}
     </Text>
    </View>

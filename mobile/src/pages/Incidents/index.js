@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Feather } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
-import { View, FlatList, Image, Text, TouchableOpacity } from "react-native";
+import React, { useState, useEffect } from 'react';
+import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
 
-import api from "../../services/api";
+import api from '../../services/api';
 
-import logoImg from "../../assets/logo.png";
+import logoImg from '../../assets/logo.png';
 
-import styles from "./styles";
+import styles from './styles';
 
 export default function Incidents() {
  const [incidents, setIncidents] = useState([]);
@@ -18,7 +18,7 @@ export default function Incidents() {
  const navigation = useNavigation();
 
  function navigateToDetail(incident) {
-  navigation.navigate("Detail", { incident });
+  navigation.navigate('Detail', { incident });
  }
  async function loadIncidents() {
   if (loading) {
@@ -31,12 +31,12 @@ export default function Incidents() {
 
   setLoading(true);
 
-  const response = await api.get("incidents", {
+  const response = await api.get('incidents', {
    params: { page }
   });
 
   setIncidents([...incidents, ...response.data]);
-  setTotal(response.headers["x-total-count"]);
+  setTotal(response.headers['x-total-count']);
   setPage(page + 1);
   setLoading(false);
  }
@@ -74,9 +74,9 @@ export default function Incidents() {
 
       <Text style={styles.incidentProperty}>VALOR:</Text>
       <Text style={styles.incidentValue}>
-       {Intl.NumberFormat("pt-Br", {
-        style: "currency",
-        currency: "BRL"
+       {Intl.NumberFormat('pt-Br', {
+        style: 'currency',
+        currency: 'BRL'
        }).format(incident.value)}
       </Text>
 
