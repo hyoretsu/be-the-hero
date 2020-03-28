@@ -1,0 +1,1 @@
+Esse foi todo o meu progresso durante a Semana OmniStack 11.0, projeto da Rocketseat para desenvolver um aplicativo que utiliza Node.js, React e React Native do 0 em apenas uma semana, realizado antes mesmo de ingressar na faculdade. (testes do backend desenvolvidos por conta própria)
